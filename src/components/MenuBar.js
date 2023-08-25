@@ -77,7 +77,7 @@ const Wrapper = styled.div`
   display: flex;
   width: 350px;
   height: 90px;
-  padding: 0px 20px 34px 20px;
+  padding: 0px 20px 0px 20px;
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid var(--light-gray, #eceaea);
@@ -89,6 +89,7 @@ const Btn = styled.div`
   width: 60px;
   height: 56px;
   padding-top: 4px;
+  padding-bottom: 34px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
