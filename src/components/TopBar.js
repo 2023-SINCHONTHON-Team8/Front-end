@@ -32,6 +32,11 @@ const TopBar = (onClick = {}) => {
 export default TopBar;
 
 const Wrapper = styled.div`
+<<<<<<< HEAD
+=======
+  position: relative;
+  margin-top: 47px;
+>>>>>>> d69c7a01f02cd66fb86b8576b966827b54d69ed1
   display: flex;
   flex-direction: row;
   width: 390px;

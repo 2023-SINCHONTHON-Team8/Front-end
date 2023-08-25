@@ -25,11 +25,7 @@ const PostPage = () => {
         <Post />
         <Post />
       </PostList>
-      {isModalOpen && (
-        <Modal isOpen={isModalOpen} onClose={closeModal}>
-          Modal Test
-        </Modal>
-      )}
+      {isModalOpen && <Modal isOpen={isModalOpen} onClose={closeModal}></Modal>}
       <MenuBar />
     </Wrapper>
   );
@@ -45,7 +41,7 @@ const Wrapper = styled.div`
 `;
 
 const PostList = styled.div`
-  height: 670px;
+  height: 680px;
   display: flex;
   flex-direction: column;
   align-items: center;
