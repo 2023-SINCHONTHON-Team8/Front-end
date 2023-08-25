@@ -19,8 +19,7 @@ const TopBar = (submit = {}) => {
 
   return (
     <TopBar_Wrapper>
-      {pathname === "/postdetail" ||
-        ("/mypage/editprofile" && <img onClick={goBack} src={back} />)}
+      {pathname === "/postdetail" && <img onClick={goBack} src={back} />}
       {pathname === "/uploadpost" && (
         <Text_negative onClick={goBack}>취소</Text_negative>
       )}
@@ -36,16 +35,21 @@ const TopBar = (submit = {}) => {
 export default TopBar;
 
 const TopBar_Wrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
-  width: 390px;
+  width: 330px;
   height: 56px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-bottom: 1px solid var(--light-gray, #eceaea);
   background: var(--white, #fbfbfb);
   padding-left: 30px;
   padding-right: 30px;
+  img {
+    position: absolute;
+    left: 10px;
+  }
 `;
 
 const Title = styled.div`
