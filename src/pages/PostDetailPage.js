@@ -116,6 +116,7 @@ const Wrapper = styled.div`
 const Image = styled.img`
   width: 390px;
   height: 190px;
+  margin-bottom: 10px;
   flex-shrink: 0;
   object-fit: cover;
 `;

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
 import styled from "styled-components";
 import TagButton from "./TagButton";
 
@@ -145,7 +145,7 @@ const Select = styled.div`
 
 const SelectBox = styled.div`
   display: flex;
-  width: 280px;
+  width: 320px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
