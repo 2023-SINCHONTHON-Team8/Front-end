@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState, useCallback } from "react";
 import { styled } from "styled-components";
 import CTABtn from "../components/CTABtn";
@@ -7,6 +8,10 @@ import { useNavigate } from "react-router-dom";
 const SignupPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
+
+  const [name, setName] = useState("");
+  const [id, setId] = useState("");
+  const [pw, setPw] = useState("");
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -20,19 +25,49 @@ const SignupPage = () => {
   const onClickHandler = () => {
     console.log("다음");
     setIsModalOpen(true);
+    let body = {
+      email: id,
+      pa: pw,
+      username: name,
+    };
+    axios
+      .post("http://bapmate.o-r.kr:8000/signup", body)
+      .then((res) => {
+        console.log(res.data);
+        alert("회원가입 성공! 로그인하세요");
+        navigate(`/login`);
+      })
+      .catch((error) => {
+        alert("회원가입 실패!");
+      });
   };
   return (
     <SignupWrapper>
       <h1>회원정보 입력</h1>
 
       <SubTitle>학교 이메일 인증</SubTitle>
-      <InputBox placeholder="babmate@university.ac.kr" />
+      <InputBox
+        placeholder="babmate@university.ac.kr"
+        onChange={(e) => {
+          setId(e.target.value);
+        }}
+      />
 
       <SubTitle>닉네임</SubTitle>
-      <InputBox placeholder="닉네임을 입력해주세요(최대10자)" />
+      <InputBox
+        placeholder="닉네임을 입력해주세요(최대10자)"
+        onChange={(e) => {
+          setName(e.target.value);
+        }}
+      />
 
       <SubTitle>비밀번호</SubTitle>
-      <InputBox placeholder="영문 대소문자, 특수문자 포함, 8자 이상" />
+      <InputBox
+        placeholder="영문 대소문자, 특수문자 포함, 8자 이상"
+        onChange={(e) => {
+          setPw(e.target.value);
+        }}
+      />
 
       <SubTitle>비밀번호 확인</SubTitle>
       <InputBox placeholder="비밀번호를 다시 입력해주세요" />
