@@ -31,7 +31,7 @@ const SignupPage = () => {
       username: name,
     };
     axios
-      .post("http://bapmate.o-r.kr:8000/signup", body)
+      .post("https://bapmate.o-r.kr:8000/signup", body)
       .then((res) => {
         console.log(res.data);
         alert("회원가입 성공! 로그인하세요");
