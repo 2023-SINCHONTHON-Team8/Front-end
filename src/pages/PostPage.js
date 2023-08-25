@@ -1,19 +1,40 @@
-import LogoSmall from "../assets/LogoSmall";
-import Tag from "../components/Tag";
+import React from "react";
+import { styled } from "styled-components";
+
 import MenuBar from "../components/MenuBar";
+import Post from "../components/Post";
+import MainTopBar from "../components/MainTopBar";
 
 const PostPage = () => {
   return (
-    <div className="PostPage">
-      메인 페이지
-      {/* 태그예시 */}
-      <Tag text="기본" />
-      <Tag text="기본" type="disabled" />
-
-      <Post />
+    <Wrapper className="PostPage">
+      <MainTopBar />
+      <PostList>
+        <Post />
+        <Post />
+        <Post />
+      </PostList>
       <MenuBar />
-    </div>
+    </Wrapper>
   );
 };
 
 export default PostPage;
+
+const Wrapper = styled.div`
+  width: 390px;
+  height: 844px;
+  background: var(--white, #fbfbfb);
+  margin: auto;
+`;
+
+const PostList = styled.div`
+  height: 670px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;

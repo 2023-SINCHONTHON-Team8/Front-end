@@ -42,6 +42,8 @@ const Post = () => {
 export default Post;
 
 const Wrapper = styled.div`
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 350px;
   display: inline-flex;
   flex-direction: column;
