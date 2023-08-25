@@ -13,7 +13,7 @@ export default CTAdelBtn;
 
 const Wrapper = styled.div`
   position: absolute;
-  bottom: 100px;
+  bottom: 80px;
   display: flex;
   width: 350px;
   height: 52px;

@@ -3,7 +3,6 @@ import { styled } from "styled-components";
 import TopBar from "../components/TopBar";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import Tag from "../components/Tag";
 import TagButton from "../components/TagButton";
 
 const UploadPostPage = () => {
@@ -155,7 +154,7 @@ const Container = styled.div`
 `;
 
 const ScrollBox = styled.div`
-  height: 790px;
+  height: 740px;
   overflow-y: scroll;
   &::-webkit-scrollbar {
     display: none;
