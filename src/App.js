@@ -8,6 +8,7 @@ import PostPage from "./pages/PostPage";
 import UploadPostPage from "./pages/UploadPostPage";
 import SignupPage from "./pages/SignupPage";
 import MeetingPage from "./pages/MeetingPage";
+import EditProfilePage from "./pages/EditProfilePage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<PostPage />} />
           <Route path="/uploadpost" element={<UploadPostPage />} />
           <Route path="/meetinglist" element={<MeetingPage />} />
+          <Route path="/mypage/editprofile" element={<EditProfilePage />} />
         </Routes>
       </div>
     </BrowserRouter>

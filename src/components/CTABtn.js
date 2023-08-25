@@ -1,10 +1,10 @@
 import React from "react";
 import { styled } from "styled-components";
 
-const CTABtn = ({ onClick }) => {
+const CTABtn = ({ onClick, text }) => {
   return (
     <Wrapper onClick={onClick}>
-      <Text id="text">참여하기</Text>
+      <Text id="text">{text}</Text>
     </Wrapper>
   );
 };

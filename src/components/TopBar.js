@@ -19,7 +19,8 @@ const TopBar = () => {
 
   return (
     <Wrapper>
-      {pathname === "/postdetail" && <img onClick={goBack} src={back} />}
+      {pathname === "/postdetail" ||
+        ("/mypage/editprofile" && <img onClick={goBack} src={back} />)}
       <Title>{titleText}</Title>
     </Wrapper>
   );

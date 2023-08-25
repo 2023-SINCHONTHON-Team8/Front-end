@@ -12,7 +12,9 @@ const Modal = ({ isOpen, onClose }) => {
           <span id="esc" onClick={onClose}>
             취소
           </span>
-          <span id="apply">적용</span>
+          <span id="apply" onClick={onClose}>
+            적용
+          </span>
         </Header>
         <Select id="people">
           <span>인원</span>

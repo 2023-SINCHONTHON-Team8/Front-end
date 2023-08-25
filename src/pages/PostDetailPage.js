@@ -95,7 +95,7 @@ const PostDetailPage = () => {
       {showCTAdelBtn ? (
         <CTAdelBtn onClick={goBack} />
       ) : (
-        <CTABtn onClick={handleCTABtnClick} />
+        <CTABtn text="참여하기" onClick={handleCTABtnClick} />
       )}
     </Wrapper>
   );
