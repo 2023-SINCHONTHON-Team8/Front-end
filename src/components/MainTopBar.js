@@ -4,11 +4,11 @@ import { styled } from "styled-components";
 import LogoSmall from "../assets/LogoSmall";
 import filter from "../assets/icons/filter.svg";
 
-const MainTopBar = () => {
+const MainTopBar = ({ openModal }) => {
   return (
     <Wrapper>
       <LogoSmall />
-      <Filter>
+      <Filter onClick={openModal}>
         <span>필터</span>
         <img src={filter} />
       </Filter>

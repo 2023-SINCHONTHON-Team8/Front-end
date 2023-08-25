@@ -1,19 +1,35 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import { styled } from "styled-components";
 
 import MenuBar from "../components/MenuBar";
 import Post from "../components/Post";
 import MainTopBar from "../components/MainTopBar";
+import Modal from "../components/Modal";
 
 const PostPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <Wrapper className="PostPage">
-      <MainTopBar />
+      <MainTopBar openModal={openModal} />
       <PostList>
         <Post />
         <Post />
         <Post />
       </PostList>
+      {isModalOpen && (
+        <Modal isOpen={isModalOpen} onClose={closeModal}>
+          Modal Test
+        </Modal>
+      )}
       <MenuBar />
     </Wrapper>
   );
