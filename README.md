@@ -29,6 +29,7 @@
 
 ### Development
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=Javascript&logoColor=white)
+![Python](https://i.namu.wiki/i/G4HvgDAp2y0hcei0AvIzqYYkbulxNnPCSQfwA5NnD3_X93Su7S1EZP4M9n-sz22A8A85LOnzNED5PzTrv2CYdAlw-KIVjJ_xKBCh6ah5dyz5F26uhaA0Xe5pcruYdXillAoAf0aTIry-GmohwG3YEw.svg)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=Django&logoColor=white)
 
