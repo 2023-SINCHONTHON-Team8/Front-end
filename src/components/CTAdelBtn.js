@@ -1,15 +1,15 @@
 import React from "react";
 import { styled } from "styled-components";
 
-const CTABtn = ({ onClick }) => {
+const CTAdelBtn = ({ onClick }) => {
   return (
     <Wrapper onClick={onClick}>
-      <Text id="text">참여하기</Text>
+      <Text id="text">참여 취소하기</Text>
     </Wrapper>
   );
 };
 
-export default CTABtn;
+export default CTAdelBtn;
 
 const Wrapper = styled.div`
   position: absolute;
@@ -19,12 +19,14 @@ const Wrapper = styled.div`
   height: 52px;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   border-radius: 40px;
-  background: var(--key, #fd505b);
+  border: 1px solid var(--key, #fd505b);
 `;
 
 const Text = styled.div`
-  color: var(--white, #fbfbfb);
+  padding: 0;
+  color: var(--white, #fd505b);
   text-align: center;
   font-family: Pretendard;
   font-size: 18px;
