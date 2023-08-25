@@ -27,7 +27,7 @@ const SignupPage = () => {
     setIsModalOpen(true);
     let body = {
       email: id,
-      pa: pw,
+      pw: pw,
       username: name,
     };
     axios
