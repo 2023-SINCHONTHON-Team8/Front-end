@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 import MenuBar from "../components/MenuBar";
 import Post from "../components/Post";
 import MainTopBar from "../components/MainTopBar";
-import Modal from "../components/Modal";
+import FilterModal from "../components/FilterModal";
 
 const PostPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,7 +25,9 @@ const PostPage = () => {
         <Post />
         <Post />
       </PostList>
-      {isModalOpen && <Modal isOpen={isModalOpen} onClose={closeModal}></Modal>}
+      {isModalOpen && (
+        <FilterModal isOpen={isModalOpen} onClose={closeModal}></FilterModal>
+      )}
       <MenuBar />
     </Wrapper>
   );
