@@ -29,6 +29,10 @@ const MenuBar = () => {
     navigate("/uploadpost");
   };
 
+  const goMeeting = () => {
+    navigate("/meetinglist");
+  };
+
   const goMy = () => {
     navigate("/mypage");
   };
@@ -36,9 +40,12 @@ const MenuBar = () => {
   useEffect(() => {
     setHomeSrc(pathname === "/" ? homeClicked : home);
     setNewSrc(pathname === "/uploadpost" ? newClicked : New);
+    setJoinSrc(pathname === "/meetinglist" ? joinClicked : join);
     setMyInfoSrc(pathname === "/mypage" ? myInfoClicked : myInfo);
     setActiveTab(pathname);
   }, [pathname]);
+
+  console.log(activeTab);
 
   return (
     <Wrapper>
@@ -50,7 +57,7 @@ const MenuBar = () => {
         <img src={newSrc} />
         <span>새 모임</span>
       </Btn>
-      <Btn id="join">
+      <Btn id="join" onClick={goMeeting} active={activeTab === "/meetinglist"}>
         <img src={joinSrc} />
         <span>참여 모임</span>
       </Btn>
@@ -91,7 +98,6 @@ const Btn = styled.div`
     color: ${({ active }) =>
       active ? "var(--key, #FD505B)" : "var(--black, #292525)"};
     text-align: center;
-    color: var(--black, #292525);
     font-family: Pretendard;
     font-size: 11px;
     font-style: normal;
