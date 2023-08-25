@@ -18,7 +18,7 @@ const CertModal = ({ isOpen, onClose }) => {
         <CertWrapper>
           <h2>인증번호 입력</h2>
           <InputBox placeholder="인증번호를 입력해주세요" />
-          <SmallBut>확인</SmallBut>
+          <SmallBut onClick={onClose}>확인</SmallBut>
         </CertWrapper>
       </DialogBox>
       <Backdrop onClick={onClose} />

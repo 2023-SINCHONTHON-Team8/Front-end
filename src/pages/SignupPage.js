@@ -2,9 +2,11 @@ import React, { useState, useCallback } from "react";
 import { styled } from "styled-components";
 import CTABtn from "../components/CTABtn";
 import CertModal from "../components/CertModal";
+import { useNavigate } from "react-router-dom";
 
 const SignupPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -12,6 +14,7 @@ const SignupPage = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+    navigate("favor");
   };
 
   const onClickHandler = () => {
