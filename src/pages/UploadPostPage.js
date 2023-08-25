@@ -188,12 +188,12 @@ const ImgContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 295px;
+  width: 320px;
   height: 170px;
 `;
 const UploadImg = styled.div`
   display: flex;
-  width: 295px;
+  width: 320px;
   height: 170px;
   margin-left: 30px;
   justify-content: center;
