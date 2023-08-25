@@ -3,6 +3,7 @@ import { styled } from "styled-components";
 import mapPin from "../assets/icons/mapPin.svg";
 import profileTest from "../assets/images/profileTest.jpg";
 import postTest from "../assets/images/postTest.jpg";
+import Tag from "./Tag";
 
 const Post = () => {
   return (
@@ -23,7 +24,11 @@ const Post = () => {
           </Detail>
           <Title id="title">브런치 먹을 사람 모여라</Title>
         </TextBox>
-        {/* <TagBox></TagBox> */}
+        <TagBox>
+          <Tag />
+          <Tag />
+          <Tag />
+        </TagBox>
       </Info>
     </Wrapper>
   );
@@ -118,4 +123,10 @@ const Title = styled.div`
   font-style: normal;
   font-weight: 700;
   line-height: 152.872%;
+`;
+
+const TagBox = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
 `;

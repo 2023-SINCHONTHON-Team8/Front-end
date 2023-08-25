@@ -10,6 +10,7 @@ const PostPage = () => {
       {/* 태그예시 */}
       <Tag text="기본" />
       <Tag text="기본" type="disabled" />
+      <Post />
     </div>
   );
 };
