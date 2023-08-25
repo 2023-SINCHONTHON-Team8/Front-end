@@ -1,16 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { styled } from "styled-components";
 
 import TapBar from "../components/TapBar";
 import Post from "../components/Post";
+import EndModal from "../components/EndModal";
 import MenuBar from "../components/MenuBar";
 
 const MeetingPage = () => {
-  const [activeTab, setActiveTab] = useState("all");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleTabClick = (tabId) => {
-    setActiveTab(tabId);
+  const openModal = () => {
+    setIsModalOpen(true);
   };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      openModal();
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <Wrapper className="MeetingPage">
@@ -21,6 +33,7 @@ const MeetingPage = () => {
         <Post />
       </List>
       <MenuBar />
+      <EndModal isOpen={isModalOpen} onClose={closeModal} />
     </Wrapper>
   );
 };
@@ -35,7 +48,7 @@ const Wrapper = styled.div`
 `;
 
 const List = styled.div`
-  height: 670px;
+  height: 710px;
   display: flex;
   flex-direction: column;
   align-items: center;
