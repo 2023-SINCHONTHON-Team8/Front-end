@@ -36,7 +36,7 @@ const PostDetailPage = () => {
               <span>김멋사</span>
             </Writer>
             <img src={divBar} />
-            <span id="people">3/6</span>
+            <span id="people">5/6</span>
           </People>
           <Detail>
             <span id="time">2023/08/25</span>
