@@ -139,7 +139,7 @@ const InputBox = styled.input`
 
   color: var(--gray, #989292);
   font-family: Pretendard;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 22px;
@@ -155,7 +155,7 @@ const InputBoxLarge = styled.textarea`
 
   color: var(--gray, #989292);
   font-family: Pretendard;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 22px;
@@ -173,7 +173,7 @@ const SelectBox = styled.select`
 
   color: var(--gray, #989292);
   font-family: Pretendard;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 22px;
