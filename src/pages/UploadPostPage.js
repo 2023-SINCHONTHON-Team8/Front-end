@@ -48,7 +48,7 @@ const UploadPostPage = () => {
     "#인스타감성",
     "#이지역터줏대감",
     "#신상핫플",
-    "# 나만아는곳",
+    "#나만아는곳",
   ];
 
   return (
@@ -74,8 +74,12 @@ const UploadPostPage = () => {
           <Title>인원</Title>
           <div>
             <SelectBox placeholder="몇 명이 참여하는 모임인가요?">
-              <option>선택1</option>
-              <option>선택2</option>
+              <option>2명</option>
+              <option>3명</option>
+              <option>4명</option>
+              <option>5명</option>
+              <option>6명</option>
+              <option>7명</option>
             </SelectBox>
           </div>
         </Container>
@@ -92,8 +96,8 @@ const UploadPostPage = () => {
         <Container>
           <Title>장소</Title>
           <SelectBox placeholder="장소를 선택해주세요">
-            <option>선택1</option>
-            <option>선택2</option>
+            <option>홍익대 정문앞</option>
+            <option>신촌역 2번출구</option>
           </SelectBox>
         </Container>
 
