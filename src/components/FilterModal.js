@@ -66,7 +66,7 @@ export default FilterModal;
 
 const ModalContainer = styled.div`
   position: absolute;
-  top: 280px;
+  top: 250px;
   z-index: 10;
   width: 390px;
   display: flex;
