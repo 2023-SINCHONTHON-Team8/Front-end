@@ -30,8 +30,8 @@ const SignupPage = () => {
       pa: pw,
       username: name,
     };
-    /*    axios
-      .post("http://bapmate.o-r.kr:8000/signup", body)
+    axios
+      .post("https://bapmate.o-r.kr:8000/signup", body)
       .then((res) => {
         console.log(res.data);
         alert("회원가입 성공! 로그인하세요");
@@ -39,7 +39,7 @@ const SignupPage = () => {
       })
       .catch((error) => {
         alert("회원가입 실패!");
-      }); */
+      });
   };
   return (
     <SignupWrapper>
