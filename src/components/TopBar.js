@@ -20,15 +20,13 @@ const TopBar = (submit = {}) => {
   return (
     <TopBar_Wrapper>
       {pathname === "/postdetail" && <img onClick={goBack} src={back} />}
-      {pathname === "/signup/favor" && <img onClick={goBack} src={back} />}
       {pathname === "/uploadpost" && (
-        <Text_negative onClick={goBack}>취소</Text_negative>
+        <Upload_Wrapper>
+          <Text_negative onClick={goBack}>취소</Text_negative>
+          <Text_positive onClick={submit}>저장</Text_positive>
+        </Upload_Wrapper>
       )}
-
       <Title>{titleText}</Title>
-      {pathname === "/uploadpost" && (
-        <Text_positive onClick={submit}>저장</Text_positive>
-      )}
     </TopBar_Wrapper>
   );
 };
@@ -54,6 +52,7 @@ const TopBar_Wrapper = styled.div`
 `;
 
 const Title = styled.div`
+  z-index: 20;
   color: var(--black, #292525);
   font-family: Pretendard;
   font-size: 16px;
@@ -67,8 +66,6 @@ const Text_negative = styled.div`
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
-
-  margin-right: 9px;
 `;
 
 const Text_positive = styled.div`
@@ -77,6 +74,20 @@ const Text_positive = styled.div`
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
+`;
 
-  margin-left: 90px;
+const Upload_Wrapper = styled.div`
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  width: 330px;
+  height: 56px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--light-gray, #eceaea);
+  background: var(--white, #fbfbfb);
+  padding-left: 30px;
+  padding-right: 30px;
+  z-index: 10;
 `;
