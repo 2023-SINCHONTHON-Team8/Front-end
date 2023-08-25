@@ -22,4 +22,7 @@ const TagWrapper = styled.button`
   border: 1px solid ${(props) => props.btnColor};
   color: ${(props) => props.btnColor};
   background-color: transparent;
+
+  margin-right: 10px;
+  margin-bottom: 10px;
 `;
