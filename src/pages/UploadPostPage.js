@@ -1,33 +1,54 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { styled } from "styled-components";
 import TopBar from "../components/TopBar";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import TagButton from "../components/TagButton";
+import plus from "../assets/icons/plus.svg";
+import close from "../assets/icons/close.svg";
 
 const UploadPostPage = () => {
   const submit = () => {
     console.log(`submit`);
   };
   const [startDate, setStartDate] = useState(new Date());
-  const MoodData = ["조용한 식사", "ENFP모임", "푸드파이터", "소식클럽"];
+  const MoodData = ["#조용한 식사", "#ENFP모임", "#푸드파이터", "#소식클럽"];
   const [selectedMood, setSelectedMood] = useState("");
+  const inputRef = useRef(null);
+  const [image, setImage] = useState("");
+  const [imgSrc, setImgSrc] = useState("");
+
+  const loadImg = (e) => {
+    setImage(e.target.files[0]);
+    const selectedImage = e.target.files[0];
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      setImgSrc(e.target.result);
+    };
+    reader.readAsDataURL(selectedImage);
+    setImgSrc(selectedImage);
+  };
+
+  const removeImage = () => {
+    setImage("");
+    setImgSrc("");
+  };
 
   const FoodData = [
-    "한식",
-    "일식",
-    "양식",
-    "중식",
-    "세계음식",
-    "뷔페",
-    "카페",
-    "주점",
+    "#한식",
+    "#일식",
+    "#양식",
+    "#중식",
+    "#세계음식",
+    "#뷔페",
+    "#카페",
+    "#주점",
   ];
   const LocationData = [
-    "인스타감성",
-    "이지역터줏대감",
-    "신상핫플",
-    "나만아는곳",
+    "#인스타감성",
+    "#이지역터줏대감",
+    "#신상핫플",
+    "# 나만아는곳",
   ];
 
   return (
@@ -120,7 +141,25 @@ const UploadPostPage = () => {
 
         <Container>
           <Title>대표 사진(선택)</Title>
-          <PhotoWrapper>+</PhotoWrapper>
+          <ImgContainer>
+            <UploadImg>
+              <img
+                id="uploadImgBtn"
+                src={plus}
+                alt="Add Art"
+                onClick={() => inputRef.current.click()}
+              />
+              <input
+                type="file"
+                ref={inputRef}
+                style={{ display: "none" }}
+                accept="image/*"
+                onChange={(e) => loadImg(e)}
+              />
+              {image && <img id="uploadedImg" src={imgSrc} />}
+              {image && <img id="delImg" onClick={removeImage} src={close} />}
+            </UploadImg>
+          </ImgContainer>
         </Container>
       </ScrollBox>
     </Wrapper>
@@ -138,10 +177,43 @@ const PhotoWrapper = styled.div`
   height: 170px;
   border-radius: 20px;
   font-size: 40px;
-
   border: 1px dashed #ffa5aa;
   color: #ffa5aa;
   margin-bottom: 20px;
+`;
+
+const ImgContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 295px;
+  height: 170px;
+`;
+const UploadImg = styled.div`
+  display: flex;
+  width: 295px;
+  height: 170px;
+  margin-left: 30px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px dashed #ffa5aa;
+  #uploadedImg {
+    position: absolute;
+    width: 101%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    z-index: 5;
+  }
+  #delImg {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    z-index: 10;
+  }
 `;
 
 const Container = styled.div`
@@ -163,7 +235,7 @@ const ScrollBox = styled.div`
 
 const TagWrapper = styled.div`
   padding-left: 20px;
-  width: 300px;
+  width: 320px;
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
