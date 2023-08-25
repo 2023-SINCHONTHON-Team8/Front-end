@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import back from "../assets/icons/back.svg";
 
-const TopBar = (onClick = {}) => {
+const TopBar = (submit = {}) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
@@ -18,25 +18,22 @@ const TopBar = (onClick = {}) => {
   else if (pathname === "/uploadpost") titleText = "새 모임 등록";
 
   return (
-    <Wrapper>
+    <TopBar_Wrapper>
       {pathname === "/postdetail" && <img onClick={goBack} src={back} />}
       {pathname === "/uploadpost" && (
         <Text_negative onClick={goBack}>취소</Text_negative>
       )}
       <Title>{titleText}</Title>
-      {pathname === "/uploadpost" && <Text_positive>저장</Text_positive>}
-    </Wrapper>
+      {pathname === "/uploadpost" && (
+        <Text_positive onClick={submit}>저장</Text_positive>
+      )}
+    </TopBar_Wrapper>
   );
 };
 
 export default TopBar;
 
-const Wrapper = styled.div`
-<<<<<<< HEAD
-=======
-  position: relative;
-  margin-top: 47px;
->>>>>>> d69c7a01f02cd66fb86b8576b966827b54d69ed1
+const TopBar_Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 390px;

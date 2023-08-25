@@ -4,6 +4,7 @@ import TopBar from "../components/TopBar";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Tag from "../components/Tag";
+import TagButton from "../components/TagButton";
 
 const UploadPostPage = () => {
   const submit = () => {
@@ -64,21 +65,69 @@ const UploadPostPage = () => {
       </SelectBox>
 
       <Title>모임 분위기</Title>
-      <div>
-        {MoodData.map((mood, index) => (
-          <Tag
+      <TagWrapper>
+        {MoodData.map((data, index) => (
+          <TagButton
             key={index}
-            text={mood}
-            type={selectedMood === mood ? "default" : "disabled"}
-            onClick={() => setSelectedMood(mood)}
+            text={data}
+            type={selectedMood === data ? "default" : "disabled"}
+            onClick={() => setSelectedMood(data)}
           />
         ))}
-      </div>
+      </TagWrapper>
+
+      <Title>음식 종료</Title>
+      <TagWrapper>
+        {FoodData.map((data, index) => (
+          <TagButton
+            key={index}
+            text={data}
+            type={selectedMood === data ? "default" : "disabled"}
+            onClick={() => setSelectedMood(data)}
+          />
+        ))}
+      </TagWrapper>
+
+      <Title>장소 타입</Title>
+      <TagWrapper>
+        {LocationData.map((data, index) => (
+          <TagButton
+            key={index}
+            text={data}
+            type={selectedMood === data ? "default" : "disabled"}
+            onClick={() => setSelectedMood(data)}
+          />
+        ))}
+      </TagWrapper>
+
+      <Title>대표 사진(선택)</Title>
+      <PhotoWrapper>+</PhotoWrapper>
     </Wrapper>
   );
 };
 
 export default UploadPostPage;
+
+const PhotoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 380px;
+  height: 170px;
+  border-radius: 20px;
+  font-size: 40px;
+  margin-left: 20px;
+
+  border: 1px dashed #ffa5aa;
+  color: #ffa5aa;
+`;
+
+const TagWrapper = styled.div`
+  display: inline-block;
+  margin-left: 20px;
+  gap: 20px;
+`;
 
 const InputBox = styled.input`
   border-radius: 40px;
