@@ -36,7 +36,7 @@ const PostPage = () => {
 export default PostPage;
 
 const Wrapper = styled.div`
-  width: 390px;
+  width: 100%;
   height: 844px;
   background: var(--white, #fbfbfb);
   margin: auto;

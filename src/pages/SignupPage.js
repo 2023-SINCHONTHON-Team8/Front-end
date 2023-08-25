@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import { styled } from "styled-components";
 import CTABtn from "../components/CTABtn";
+import CertModal from "../components/CertModal";
+import { useNavigate } from "react-router-dom";
 
 const SignupPage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    navigate("favor");
+  };
+
+  const onClickHandler = () => {
+    console.log("다음");
+    setIsModalOpen(true);
+  };
   return (
     <SignupWrapper>
       <h1>회원정보 입력</h1>
@@ -25,7 +43,11 @@ const SignupPage = () => {
         <GenderBut>여</GenderBut>
       </GenderWrapper>
 
-      <CTABtn text="다음으로" />
+      <CTABtn text="다음으로" onClick={onClickHandler} />
+
+      {isModalOpen && (
+        <CertModal isOpen={isModalOpen} onClose={closeModal}></CertModal>
+      )}
     </SignupWrapper>
   );
 };

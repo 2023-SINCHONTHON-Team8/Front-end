@@ -9,6 +9,7 @@ import UploadPostPage from "./pages/UploadPostPage";
 import SignupPage from "./pages/SignupPage";
 import MeetingPage from "./pages/MeetingPage";
 import EditProfilePage from "./pages/EditProfilePage";
+import SignupFavor from "./pages/SignupFavor";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route path="/signup/favor" element={<SignupFavor />} />
           <Route path="/mypage" element={<MyPage />} />
           <Route path="/postdetail" element={<PostDetailPage />} />
           <Route path="/" element={<PostPage />} />
