@@ -28,8 +28,8 @@ const TopBar = () => {
 export default TopBar;
 
 const Wrapper = styled.div`
-  position: absolute;
-  top: 47px;
+  position: relative;
+  margin-top: 47px;
   display: flex;
   width: 390px;
   height: 56px;
