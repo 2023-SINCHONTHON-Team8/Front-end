@@ -12,6 +12,8 @@ const TopBar = (submit = {}) => {
     navigate(-1);
   };
 
+  console.log(pathname);
+
   let titleText = "";
 
   if (pathname === "/postdetail") titleText = "모임 상세";
@@ -20,6 +22,9 @@ const TopBar = (submit = {}) => {
   return (
     <TopBar_Wrapper>
       {pathname === "/postdetail" && <img onClick={goBack} src={back} />}
+      {pathname === "/mypage/editprofile" && (
+        <img onClick={goBack} src={back} />
+      )}
       {pathname === "/uploadpost" && (
         <Upload_Wrapper>
           <Text_negative onClick={goBack}>취소</Text_negative>
