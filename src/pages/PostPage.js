@@ -1,9 +1,13 @@
 import React from "react";
 import { styled } from "styled-components";
-import CTABtn from "../components/CTABtn";
+import Post from "../components/Post";
 
 const PostPage = () => {
-  return <div className="PostPage">메인 페이지</div>;
+  return (
+    <div className="PostPage">
+      <Post />
+    </div>
+  );
 };
 
 export default PostPage;
