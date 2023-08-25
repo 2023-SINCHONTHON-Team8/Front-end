@@ -2,17 +2,12 @@ import styled from "styled-components";
 import React, { useState } from "react";
 
 const TagButton = ({ text, type }) => {
-  const [buttonType, setButtonType] = useState(type);
+  const [disabled, setDisabled] = useState(true);
 
-  const toggleButtonType = () => {
-    const newType = buttonType === "disabled" ? null : "disabled";
-    setButtonType(newType);
-  };
-
-  let btnColor = type === "disabled" ? "#989292" : "#fd505b";
+  let btnColor = disabled ? "#989292" : "#fd505b";
 
   return (
-    <TagWrapper btnColor={btnColor} onClick={toggleButtonType}>
+    <TagWrapper btnColor={btnColor} onClick={() => setDisabled(!disabled)}>
       {text}
     </TagWrapper>
   );

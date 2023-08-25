@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 import TopBar from "../components/TopBar";
 import postTest from "../assets/images/postTest.jpg";
@@ -8,8 +9,21 @@ import mapPin from "../assets/icons/mapPin.svg";
 import profileTest from "../assets/images/profileTest.jpg";
 import Tag from "../components/Tag";
 import CTABtn from "../components/CTABtn";
+import CTAdelBtn from "../components/CTAdelBtn";
 
 const PostDetailPage = () => {
+  const navigate = useNavigate();
+
+  const [showCTAdelBtn, setShowCTAdelBtn] = useState(false);
+
+  const handleCTABtnClick = () => {
+    setShowCTAdelBtn(true);
+  };
+
+  const goBack = () => {
+    navigate(-1);
+  };
+
   return (
     <Wrapper className="PostDetailPage">
       <TopBar />
@@ -78,7 +92,11 @@ const PostDetailPage = () => {
           </People>
         </List>
       </Members>
-      <CTABtn />
+      {showCTAdelBtn ? (
+        <CTAdelBtn onClick={goBack} />
+      ) : (
+        <CTABtn onClick={handleCTABtnClick} />
+      )}
     </Wrapper>
   );
 };
