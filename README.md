@@ -38,3 +38,11 @@
 ---
 ## 화면 구성
 https://www.figma.com/file/oK2LA3rYkMS8c9M9O1rxXc/2023-%EC%8B%A0%EC%B4%8C%ED%86%A4-8%EC%A1%B0?type=design&node-id=9-6&mode=design&t=QMVFvmBYLa8AhQRl-0
+
+## 백엔드 설계
+### ERDCloud
+![image](https://github.com/2023-SINCHONTHON-Team8/Front-end/assets/122217424/0ace4242-40ec-4686-808f-31dabfa5ac29)
+
+
+### API 명세서
+
