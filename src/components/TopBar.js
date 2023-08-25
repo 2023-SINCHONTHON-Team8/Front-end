@@ -19,10 +19,12 @@ const TopBar = (submit = {}) => {
 
   return (
     <TopBar_Wrapper>
-      {pathname === "/postdetail" && <img onClick={goBack} src={back} />}
+      {pathname === "/postdetail" ||
+        ("/mypage/editprofile" && <img onClick={goBack} src={back} />)}
       {pathname === "/uploadpost" && (
         <Text_negative onClick={goBack}>취소</Text_negative>
       )}
+
       <Title>{titleText}</Title>
       {pathname === "/uploadpost" && (
         <Text_positive onClick={submit}>저장</Text_positive>
