@@ -1,6 +1,4 @@
-import React from "react";
-import { styled } from "styled-components";
-import Post from "../components/Post";
+import LogoSmall from "../assets/LogoSmall";
 import Tag from "../components/Tag";
 import MenuBar from "../components/MenuBar";
 
@@ -11,6 +9,7 @@ const PostPage = () => {
       {/* 태그예시 */}
       <Tag text="기본" />
       <Tag text="기본" type="disabled" />
+
       <Post />
       <MenuBar />
     </div>
