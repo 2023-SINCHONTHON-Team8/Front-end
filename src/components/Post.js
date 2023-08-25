@@ -1,5 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
+import { useNavigate } from "react-router-dom";
+
 import divBar from "../assets/icons/divBar.svg";
 import mapPin from "../assets/icons/mapPin.svg";
 import profileTest from "../assets/images/profileTest.jpg";
@@ -7,8 +9,14 @@ import postTest from "../assets/images/postTest.jpg";
 import Tag from "./Tag";
 
 const Post = () => {
+  const navigate = useNavigate();
+
+  const moveDetail = () => {
+    navigate("/postdetail");
+  };
+
   return (
-    <Wrapper>
+    <Wrapper onClick={moveDetail}>
       <Image id="postImg" src={postTest}></Image>
       <Info>
         <TextBox>
@@ -30,9 +38,9 @@ const Post = () => {
           <Title id="title">브런치 먹을 사람 모여라</Title>
         </TextBox>
         <TagBox>
-          <Tag />
-          <Tag />
-          <Tag />
+          <Tag text="#" />
+          <Tag text="#" />
+          <Tag text="#" />
         </TagBox>
       </Info>
     </Wrapper>
