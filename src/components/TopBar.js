@@ -66,6 +66,8 @@ const Text_negative = styled.div`
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
+
+  margin-right: 90px;
 `;
 
 const Text_positive = styled.div`
@@ -74,4 +76,6 @@ const Text_positive = styled.div`
   font-size: 13px;
   font-style: normal;
   font-weight: 500;
+
+  margin-left: 90px;
 `;

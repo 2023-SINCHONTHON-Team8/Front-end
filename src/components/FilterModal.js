@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import styled from "styled-components";
 import TagButton from "./TagButton";
 
-const Modal = ({ isOpen, onClose }) => {
+const FilterModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
@@ -62,7 +62,7 @@ const Modal = ({ isOpen, onClose }) => {
   );
 };
 
-export default Modal;
+export default FilterModal;
 
 const ModalContainer = styled.div`
   position: absolute;
