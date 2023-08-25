@@ -48,9 +48,9 @@ const PostDetailPage = () => {
           <Title id="title">브런치 먹을 사람 모여라</Title>
         </TextBox>
         <TagBox>
-          <Tag text="#" />
-          <Tag text="#" />
-          <Tag text="#" />
+          <Tag text="#ENFP모임" />
+          <Tag text="#양식" />
+          <Tag text="#인스타감" />
         </TagBox>
       </Info>
       <Content>
