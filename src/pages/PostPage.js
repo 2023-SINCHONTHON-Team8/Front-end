@@ -1,3 +1,4 @@
+import LogoSmall from "../assets/LogoSmall";
 import Tag from "../components/Tag";
 
 const PostPage = () => {
@@ -7,6 +8,7 @@ const PostPage = () => {
       {/* 태그예시 */}
       <Tag text="기본" />
       <Tag text="기본" type="disabled" />
+      <LogoSmall />
     </div>
   );
 };
