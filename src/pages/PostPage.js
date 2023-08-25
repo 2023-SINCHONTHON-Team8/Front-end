@@ -19,7 +19,7 @@ const PostPage = () => {
       <button onClick={openModal}>모달 열기</button>
       {isModalOpen && (
         <Modal isOpen={isModalOpen} onClose={closeModal}>
-          이곳에 children이 들어갑니다.
+          Modal Test
         </Modal>
       )}
       <MenuBar />
