@@ -13,7 +13,7 @@ export default CTABtn;
 
 const Wrapper = styled.div`
   position: absolute;
-  bottom: 30px;
+  bottom: 80px;
   display: flex;
   width: 350px;
   height: 52px;
