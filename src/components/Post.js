@@ -1,5 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
+import divBar from "../assets/icons/divBar.svg";
 import mapPin from "../assets/icons/mapPin.svg";
 import profileTest from "../assets/images/profileTest.jpg";
 import postTest from "../assets/images/postTest.jpg";
@@ -11,10 +12,14 @@ const Post = () => {
       <Image id="postImg" src={postTest}></Image>
       <Info>
         <TextBox>
-          <Writer id="writer">
-            <img src={profileTest} />
-            <span>김멋사</span>
-          </Writer>
+          <People>
+            <Writer id="writer">
+              <img src={profileTest} />
+              <span>김멋사</span>
+            </Writer>
+            <img src={divBar} />
+            <span id="people">3/6</span>
+          </People>
           <Detail>
             <span id="time">2023/08/25</span>
             <Place>
@@ -63,6 +68,18 @@ const Info = styled.div`
   background: var(--white, #fbfbfb);
 `;
 
+const People = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--black, #292525);
+  font-family: Pretendard;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 152.872%;
+`;
+
 const TextBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -74,12 +91,6 @@ const Writer = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--black, #292525);
-  font-family: Pretendard;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 152.872%;
   img {
     width: 24px;
     height: 24px;
