@@ -6,6 +6,7 @@ import PostDetailPage from "./pages/PostDetailPage";
 import PostPage from "./pages/PostPage";
 import UploadPostPage from "./pages/UploadPostPage";
 import SignupPage from "./pages/SignupPage";
+import MeetingPage from "./pages/MeetingPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/postdetail" element={<PostDetailPage />} />
           <Route path="/" element={<PostPage />} />
           <Route path="/uploadpost" element={<UploadPostPage />} />
+          <Route path="/meetinglist" element={<MeetingPage />} />
         </Routes>
       </div>
     </BrowserRouter>
