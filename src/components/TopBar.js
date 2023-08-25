@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import back from "../assets/icons/back.svg";
 
-const TopBar = () => {
+const TopBar = (submit = {}) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
@@ -18,30 +18,34 @@ const TopBar = () => {
   else if (pathname === "/uploadpost") titleText = "새 모임 등록";
 
   return (
-    <Wrapper>
+    <TopBar_Wrapper>
       {pathname === "/postdetail" ||
         ("/mypage/editprofile" && <img onClick={goBack} src={back} />)}
+      {pathname === "/uploadpost" && (
+        <Text_negative onClick={goBack}>취소</Text_negative>
+      )}
+
       <Title>{titleText}</Title>
-    </Wrapper>
+      {pathname === "/uploadpost" && (
+        <Text_positive onClick={submit}>저장</Text_positive>
+      )}
+    </TopBar_Wrapper>
   );
 };
 
 export default TopBar;
 
-const Wrapper = styled.div`
-  position: relative;
-  margin-top: 47px;
+const TopBar_Wrapper = styled.div`
   display: flex;
+  flex-direction: row;
   width: 390px;
   height: 56px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--light-gray, #eceaea);
   background: var(--white, #fbfbfb);
-  img {
-    position: absolute;
-    left: 18px;
-  }
+  padding-left: 30px;
+  padding-right: 30px;
 `;
 
 const Title = styled.div`
@@ -50,5 +54,20 @@ const Title = styled.div`
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
-  line-height: 152.872%;
+`;
+
+const Text_negative = styled.div`
+  color: var(--gray, #989292);
+  font-family: Pretendard;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+`;
+
+const Text_positive = styled.div`
+  color: var(--key, #fd505b);
+  font-family: Pretendard;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
 `;
