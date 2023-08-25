@@ -34,74 +34,96 @@ const UploadPostPage = () => {
   return (
     <Wrapper>
       <TopBar submit={submit} />
-      <Title>모임 이름</Title>
-      <InputBox placeholder="모임을 잘 나타내는 이름을 지어주세요 (최대 20자)" />
+      <ScrollBox>
+        <Container>
+          <Title>모임 이름</Title>
+          <InputBox placeholder="모임을 잘 나타내는 이름을 지어주세요 (최대 20자)" />
+        </Container>
 
-      <Title>한줄 소개</Title>
-      <InputBoxLarge placeholder="모임을 간단히 설명해 주세요 (최대 70자)" />
+        <Container>
+          <Title>한줄 소개</Title>
+          <InputBoxLarge placeholder="모임을 간단히 설명해 주세요 (최대 70자)" />
+        </Container>
 
-      <Title>오픈 채팅방 링크</Title>
-      <InputBox placeholder="참여자들과 소통할 오픈채팅방 링크를 입력해주세요" />
+        <Container>
+          <Title>오픈 채팅방 링크</Title>
+          <InputBox placeholder="참여자들과 소통할 오픈채팅방 링크를 입력해주세요" />
+        </Container>
 
-      <Title>인원</Title>
-      <div>
-        <SelectBox placeholder="몇 명이 참여하는 모임인가요?">
-          <option>선택1</option>
-          <option>선택2</option>
-        </SelectBox>
-      </div>
+        <Container>
+          <Title>인원</Title>
+          <div>
+            <SelectBox placeholder="몇 명이 참여하는 모임인가요?">
+              <option>선택1</option>
+              <option>선택2</option>
+            </SelectBox>
+          </div>
+        </Container>
 
-      <Title>날짜</Title>
-      <SDatePicker
-        selected={startDate}
-        onChange={(date) => setStartDate(date)}
-        placeholder="언제 만나는 일정인가요?"
-      />
-
-      <Title>장소</Title>
-      <SelectBox placeholder="장소를 선택해주세요">
-        <option>선택1</option>
-        <option>선택2</option>
-      </SelectBox>
-
-      <Title>모임 분위기</Title>
-      <TagWrapper>
-        {MoodData.map((data, index) => (
-          <TagButton
-            key={index}
-            text={data}
-            type={selectedMood === data ? "default" : "disabled"}
-            onClick={() => setSelectedMood(data)}
+        <Container>
+          <Title>날짜</Title>
+          <SDatePicker
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            placeholder="언제 만나는 일정인가요?"
           />
-        ))}
-      </TagWrapper>
+        </Container>
 
-      <Title>음식 종료</Title>
-      <TagWrapper>
-        {FoodData.map((data, index) => (
-          <TagButton
-            key={index}
-            text={data}
-            type={selectedMood === data ? "default" : "disabled"}
-            onClick={() => setSelectedMood(data)}
-          />
-        ))}
-      </TagWrapper>
+        <Container>
+          <Title>장소</Title>
+          <SelectBox placeholder="장소를 선택해주세요">
+            <option>선택1</option>
+            <option>선택2</option>
+          </SelectBox>
+        </Container>
 
-      <Title>장소 타입</Title>
-      <TagWrapper>
-        {LocationData.map((data, index) => (
-          <TagButton
-            key={index}
-            text={data}
-            type={selectedMood === data ? "default" : "disabled"}
-            onClick={() => setSelectedMood(data)}
-          />
-        ))}
-      </TagWrapper>
+        <Container>
+          <Title>모임 분위기</Title>
+          <TagWrapper>
+            {MoodData.map((data, index) => (
+              <TagButton
+                key={index}
+                text={data}
+                type={selectedMood === data ? "default" : "disabled"}
+                onClick={() => setSelectedMood(data)}
+              />
+            ))}
+          </TagWrapper>
+        </Container>
 
-      <Title>대표 사진(선택)</Title>
-      <PhotoWrapper>+</PhotoWrapper>
+        <Container>
+          <Title>음식 종류</Title>
+          <TagWrapper>
+            {FoodData.map((data, index) => (
+              <TagButton
+                key={index}
+                text={data}
+                type={selectedMood === data ? "default" : "disabled"}
+                onClick={() => setSelectedMood(data)}
+              />
+            ))}
+          </TagWrapper>
+        </Container>
+
+        <Container>
+          <Title>장소 타입</Title>
+          <TagWrapper>
+            {LocationData.map((data, index) => (
+              <TagButton
+                key={index}
+                text={data}
+                type={selectedMood === data ? "default" : "disabled"}
+                onClick={() => setSelectedMood(data)}
+              />
+            ))}
+          </TagWrapper>
+        </Container>
+
+        <Container>
+          <Title>대표 사진(선택)</Title>
+          <PhotoWrapper>+</PhotoWrapper>
+        </Container>
+      </ScrollBox>
     </Wrapper>
   );
 };
@@ -112,30 +134,48 @@ const PhotoWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  width: 380px;
+  margin-left: 20px;
+  width: 295px;
   height: 170px;
   border-radius: 20px;
   font-size: 40px;
-  margin-left: 20px;
 
   border: 1px dashed #ffa5aa;
   color: #ffa5aa;
+  margin-bottom: 20px;
+`;
+
+const Container = styled.div`
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+`;
+
+const ScrollBox = styled.div`
+  height: 790px;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const TagWrapper = styled.div`
-  display: inline-block;
-  margin-left: 20px;
-  gap: 20px;
+  padding-left: 20px;
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
 `;
 
 const InputBox = styled.input`
   border-radius: 40px;
   border: 1px solid var(--light-gray, #eceaea);
-  width: 350px;
+  width: 295px;
   height: 30px;
   padding: 17px 24px;
-  margin-left: 20px;
 
   color: var(--gray, #989292);
   font-family: Pretendard;
@@ -148,11 +188,10 @@ const InputBox = styled.input`
 const InputBoxLarge = styled.textarea`
   border-radius: 40px;
   border: 1px solid var(--light-gray, #eceaea);
-  width: 350px;
+  width: 295px;
   height: 100px;
   padding: 17px 24px;
-  margin-left: 20px;
-
+  resize: none;
   color: var(--gray, #989292);
   font-family: Pretendard;
   font-size: 16px;
@@ -165,10 +204,9 @@ const SelectBox = styled.select`
   appearance: none; /* 브라우저 스타일 무시 */
   border-radius: 40px;
   border: 1px solid var(--light-gray, #eceaea);
-  width: 390px;
+  width: 345px;
   height: 60px;
   padding: 17px 24px;
-  margin-left: 20px;
   padding-right: 30px;
 
   color: var(--gray, #989292);
@@ -180,12 +218,13 @@ const SelectBox = styled.select`
 `;
 
 const Wrapper = styled.div`
+  width: 390px;
+  height: 844px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 30px;
-
-  align-items:center:
-  justify-content:center;
+  align-items: center;
 `;
 
 const Title = styled.div`
@@ -199,10 +238,9 @@ const Title = styled.div`
 const SDatePicker = styled(DatePicker)`
   border-radius: 40px;
   border: 1px solid var(--light-gray, #eceaea);
-  width: 350px;
+  width: 295px;
   height: 30px;
   padding: 17px 24px;
-  margin-left: 20px;
 
   color: var(--gray, #989292);
   font-family: Pretendard;
